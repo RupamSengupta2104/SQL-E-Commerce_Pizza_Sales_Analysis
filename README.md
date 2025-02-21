@@ -1,4 +1,4 @@
-# E-Commerce Pizze Sales Analysis SQL Project
+# E-Commerce Pizza Sales Analysis SQL Project
 
 ## Project Overview
 
