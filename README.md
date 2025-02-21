@@ -84,6 +84,16 @@ ON pizza_types.pizza_type_id = pizzas.pizza_type_id
 ORDER BY pizzas.price DESC LIMIT 1;
 ```
 
+5. **Identify the most common pizza size ordered**:
+```sql
+SELECT pizzas.size, COUNT(order_details.order_details_id) AS order_count
+FROM pizzas JOIN order_details
+ON pizzas.pizza_id = order_details.pizza_id
+GROUP BY pizzas.size
+ORDER BY order_count DESC
+LIMIT 1;
+```
+
 ## Intermediate Queries
 
 1. **Find the most common pizza size ordered**:
@@ -174,6 +184,6 @@ This project showcases SQL capabilities in database management, data retrieval, 
 
 ## Author
 This project is part of my portfolio, demonstrating SQL skills for data analysis. If you have any questions, feedback, or collaboration ideas, feel free to connect!
-
+https://www.youtube.com/watch?v=zZpMvAedh_E&list=LL&index=1&t=1250s
 
 
