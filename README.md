@@ -94,6 +94,12 @@ ORDER BY order_count DESC
 LIMIT 1;
 ```
 
+6. **List the top 5 most ordered pizza types along with their quantities**:
+```sql
+
+```
+
+
 ## Intermediate Queries
 
 1. **Find the most common pizza size ordered**:
