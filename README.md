@@ -119,6 +119,11 @@ GROUP BY pizza_types.category
 ORDER BY quantity DESC;
 ```
 
+8. **Join relevant tables to find the category wise distribution pizzas**:
+```sql
+SELECT category, COUNT(name) FROM pizza_types
+GROUP BY category;
+```
 
 ## Intermediate Queries
 
