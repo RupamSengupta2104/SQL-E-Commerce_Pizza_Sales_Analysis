@@ -156,7 +156,7 @@ ORDER BY total_quantity DESC;
 4. **Determine the distribution of orders by hour of the day**:
 ```sql
 SELECT EXTRACT(HOUR FROM order_time) AS order_hour, COUNT(*) AS total_orders
-FROM orders
+FROM order_details
 GROUP BY order_hour
 ORDER BY order_hour;
 ```
