@@ -129,7 +129,8 @@ GROUP BY category;
 
 1. **Find the most common pizza size ordered**:
 ```sql
-SELECT size, COUNT(*) AS order_count
+SELECT size, 
+				COUNT(*) AS order_count
 FROM pizzas 
 JOIN order_details ON pizzas.pizza_id = order_details.pizza_id
 GROUP BY size
@@ -139,7 +140,8 @@ LIMIT 1;
 
 2. **List the top 5 most ordered pizza types along with their quantities**:
 ```sql
-SELECT pizza_types.name, SUM(order_details.quantity) AS total_quantity
+SELECT pizza_types.name, 
+				SUM(order_details.quantity) AS total_quantity
 FROM order_details
 JOIN pizzas ON order_details.pizza_id = pizzas.pizza_id
 JOIN pizza_types ON pizzas.pizza_type_id = pizza_types.pizza_type_id
@@ -150,7 +152,8 @@ LIMIT 5;
 
 3. **Find the total quantity of each pizza category ordered**:
 ```sql
-SELECT pizza_types.category, SUM(order_details.quantity) AS total_quantity
+SELECT pizza_types.category, 
+				SUM(order_details.quantity) AS total_quantity
 FROM order_details
 JOIN pizzas ON order_details.pizza_id = pizzas.pizza_id
 JOIN pizza_types ON pizzas.pizza_type_id = pizza_types.pizza_type_id
@@ -160,7 +163,8 @@ ORDER BY total_quantity DESC;
 
 4. **Determine the distribution of orders by hour of the day**:
 ```sql
-SELECT EXTRACT(HOUR FROM order_time) AS order_hour, COUNT(*) AS total_orders
+SELECT EXTRACT(HOUR FROM order_time) AS order_hour, 
+				COUNT(*) AS total_orders
 FROM order_details
 GROUP BY order_hour
 ORDER BY order_hour;
@@ -180,7 +184,7 @@ FROM (
 6. **Determine the top 3 most ordered pizza types based on revenue**:
 ```sql
 SELECT pizza_types.name,
-SUM(order_details.quantity * pizzas.price) AS revenue
+			SUM(order_details.quantity * pizzas.price) AS revenue
 FROM pizza_types
 JOIN pizzas
 ON pizzas.pizza_type_id = pizzas.pizza_id
